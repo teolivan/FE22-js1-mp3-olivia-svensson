@@ -3,7 +3,7 @@ const langInput = document.getElementById("langinput");
 const errormsg = document.getElementById("errormessage");
 
 function api() {
-    const langName = langInput.value;
+    const langName = document.getElementById("langinput").value;
     const errormsg = document.getElementById("errormessage");
     const result = document.getElementById("result");
 
@@ -15,9 +15,18 @@ function api() {
        errormsg.innerText = "Not a valid language";
         })
         .then((data) => {
-            const dataSort = data.sort((1, 2) => 2.population - 1.population);
+            const dataSort = data.sort((a, b) => b.population - a.population);
+            console.log(dataSort);
+         
             
-        }
+            
+            });
+
+            document.getElementById("officialname").innerText = "Country: ${data.name.common}";
+            document.getElementById("subregion").innerText = "Subregion: ${data.subregion}"
+            document.getElementById("capital").innerText = "Capital: ${data.capital}"
+            document.getElementById("population").innerText = "Population: ${data.population}"
+        };
     }
 }
 
