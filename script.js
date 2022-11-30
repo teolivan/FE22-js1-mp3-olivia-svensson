@@ -14,21 +14,22 @@ function api() {
         }
        errormsg.innerText = "Not a valid language";
         })
-        .then((data) => {
-            const dataSort = data.sort((a, b) => b.population - a.population);
+        .then((value) => {
+            console.log(value);
+            const dataSort = value.sort((a, b) => b.population - a.population);
             console.log(dataSort);
          
-            
+
+            document.getElementById("officialname").innerText = `Country: ${dataSort[0].name.common}`;
+            document.getElementById("subregion").innerText = `Subregion: ${dataSort[0].subregion}`;
+            document.getElementById("capital").innerText = `Capital: ${dataSort[0].capital}`;
+            document.getElementById("capita").innerText = `Population: ${dataSort[0].population}`;            
             
             });
 
-            document.getElementById("officialname").innerText = "Country: ${data.name.common}";
-            document.getElementById("subregion").innerText = "Subregion: ${data.subregion}"
-            document.getElementById("capital").innerText = "Capital: ${data.capital}"
-            document.getElementById("population").innerText = "Population: ${data.population}"
         };
-    }
-}
+    
+
 
 /* 
 langBtn.addEventListener("click", () => {
