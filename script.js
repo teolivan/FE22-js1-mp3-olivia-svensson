@@ -10,10 +10,6 @@ function api() {
 
     const divResult = document.getElementById("result");
     divResult.innerHTML = "";
-//if (document.getElementById("divid") != null) {
-//document.getElementById("divid").remove();
-  //  }
-   //document.getElementById("div").replaceChildren("");
 
     fetch(`https://restcountries.com/v3.1/lang/${langName}`)
     .then((response) => {
@@ -70,13 +66,3 @@ function api() {
     
         };
     
-
-
-/* 
-langBtn.addEventListener("click", () => {
-    let langName = langInput.value;
-    let finalURL = `https://restcountries.com/v3.1/lang/${langName}`;
-    console.log(finalURL);
-});
-
-*/
