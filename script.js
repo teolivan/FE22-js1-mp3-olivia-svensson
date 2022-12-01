@@ -27,11 +27,10 @@ function api() {
             const dataSort = value.sort((a, b) => b.population - a.population);
  
             
-            createContainer = (value) => {
+            createContainer = (value, index) => {
                 //parent
                 const div = document.createElement("div");
-                div.id = "divid";
-                 div.innerHTML = "";
+        
                 //children
                 const officialname = document.createElement("p");
                 const subregion = document.createElement("p");
@@ -39,6 +38,9 @@ function api() {
                 const capita = document.createElement("p");
                 const flag = document.createElement("img");
             
+                if (index === 0) {
+                    div.setAttribute("id", "mostpeople");
+                }
 
             officialname.innerText = `Country: ${value.name.common}`;
             subregion.innerText = `Subregion: ${value.subregion}`;
